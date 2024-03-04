@@ -1,4 +1,4 @@
-function generateTodoItem(title, desc, dueDate, priority) {
+async function generateTodoItem(title, desc, dueDate, priority) {
     return {
         title: title,
         description: desc,
