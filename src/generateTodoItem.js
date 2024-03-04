@@ -1,4 +1,4 @@
-async function generateTodoItem(title, desc, dueDate, priority) {
+export default async function generateTodoItem(title, desc, dueDate, priority) {
     return {
         title: title,
         description: desc,
@@ -7,5 +7,3 @@ async function generateTodoItem(title, desc, dueDate, priority) {
         checked: false
     }
 }
-
-export default generateTodoItem;
