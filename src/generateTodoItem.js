@@ -1,4 +1,4 @@
-export default async function generateTodoItem(title, desc, dueDate, priority) {
+export default function generateTodoItem(title, desc, dueDate, priority) {
     return {
         title: title,
         description: desc,
