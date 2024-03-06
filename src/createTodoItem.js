@@ -1,10 +1,9 @@
-function createTodoItem(title, description, dueDate, priority, notes = '', checklist = []) {
+function createTodoItem(title, description, dueDate, priority, checklist = []) {
     return {
         title,
         description,
         dueDate,
         priority,
-        notes,
         checklist,
         checked: false, // assuming a default value for the checked status
     };
