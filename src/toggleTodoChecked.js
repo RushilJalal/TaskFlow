@@ -1,3 +1,5 @@
-export default function toggleTodoChecked(todoItem) {
+function toggleTodoChecked(todoItem) {
     todoItem.checked = !todoItem.checked;
 }
+
+export default toggleTodoChecked;
