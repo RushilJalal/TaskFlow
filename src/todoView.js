@@ -1,35 +1,96 @@
-import { todoList } from "./todoModel";
+import { todoList, createTodoItem } from "./todoModel";
 
 export function todoView() {
+    createHeader();
+    createTaskNameInput();
+    createNewTaskButton();
+    renderTodoList();
+
+    const newTaskButton = document.querySelector(".new-task-button");
+    newTaskButton.addEventListener("click", handleAddTask);
+}
+
+function createHeader() {
     const header = document.createElement("h1");
     header.textContent = "To-Do List";
+    header.classList.add("header");
     document.body.appendChild(header);
+}
 
-    //an input box to take the task name
+function createTaskNameInput() {
     const taskNameInput = document.createElement("input");
     taskNameInput.setAttribute("type", "text");
     taskNameInput.setAttribute("placeholder", "Task Name");
+    taskNameInput.classList.add("task-name-input");
     document.body.appendChild(taskNameInput);
+}
 
+function createNewTaskButton() {
     const newTaskButton = document.createElement("button");
     newTaskButton.textContent = "Add a task";
+    newTaskButton.classList.add("new-task-button");
     document.body.appendChild(newTaskButton);
+}
 
+function renderTodoList() {
     const taskList = document.createElement("ul");
-    document.body.appendChild(taskList);
+    taskList.classList.add("task-list");
 
-    renderTodoList(taskList);
-
-}
-
-// iterate `todoList` and create a new task element for each item in the list
-function renderTodoList(taskList) {
     todoList.forEach(todoItem => {
-        const task = document.createElement("li");
-        const taskName = document.createElement("div");
-        taskName.value = todoItem.title;
-        task.appendChild(taskName);
-        taskList.appendChild(task);
+        const taskDiv = createTaskDiv(todoItem);
+        taskList.appendChild(taskDiv);
     });
+
+    document.body.appendChild(taskList);
 }
 
+function createTaskDiv(todoItem) {
+    const taskDiv = document.createElement("div");
+    taskDiv.classList.add("task-item");
+
+    const checkbox = createCheckbox(todoItem.checked);
+    taskDiv.appendChild(checkbox);
+
+    const taskName = createTaskName(todoItem.title);
+    taskDiv.appendChild(taskName);
+
+    const priority = createPriority(todoItem.priority);
+    taskDiv.appendChild(priority);
+
+    return taskDiv;
+}
+
+function createCheckbox(checked) {
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.checked = checked;
+    return checkbox;
+}
+
+function createTaskName(title) {
+    const taskName = document.createElement("div");
+    taskName.textContent = title;
+    return taskName;
+}
+
+function createPriority(priority) {
+    const priorityElement = document.createElement("span");
+    priorityElement.textContent = priority;
+    return priorityElement;
+}
+
+function handleAddTask() {
+    const inputName = document.querySelector(".task-name-input");
+    const taskName = inputName.value;
+    if (taskName === "") {
+        alert("Task name cannot be empty");
+        return;
+    }
+
+    const newTask = createTodoItem(taskName, "", "", "low");
+    todoList.push(newTask);
+
+    const taskList = document.querySelector(".task-list");
+    taskList.remove();
+    renderTodoList();
+}

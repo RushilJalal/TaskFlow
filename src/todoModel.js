@@ -14,15 +14,6 @@ export const todoList = [
     createTodoItem("Study notes", "CNP notes", "2024-03-02", "high", [], true)
 ];
 
-
-export function addTodoItemToList(TodoItem) {
-    todoList.push(TodoItem);
-}
-
-export function toggleTodoChecked(todoItem) {
-    todoItem.checked = !todoItem.checked;
-}
-
 export function toggleTodoItemPriority(todoItem) {
     if (todoItem.priority == "high")
         todoItem.priority = "low";
