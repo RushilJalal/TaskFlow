@@ -1,4 +1,5 @@
 import './style.css';
-import addTodoItemToList from './src/addTodoItemToList';
+import { todoView } from './src/todoView';
 
-addTodoItemToList();
+
+todoView();
