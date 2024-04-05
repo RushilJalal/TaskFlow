@@ -4,11 +4,12 @@ body{
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
+    background-color: #5674c0;
+    font-size: 20px;
 }
 
 .header{
-    color: rgb(88, 88, 88);
+    color: rgb(255, 255, 255);
     padding: 10px 0;
     text-align: center;
 }
@@ -27,10 +28,37 @@ body{
     border-bottom: 1px solid #e0e0e0;
     background-color: rgb(67, 65, 65);
     border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
 }
 
 .task-name-input{
-    padding: 5px;
+    margin: 10px;
+    padding: 10px;
     border: 1px solid #e0e0e0;
     border-radius: 5px;
+    /* center the input box  */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.task-name-input:focus{
+    outline: none;
+}
+
+.input-field-button {
+    display: flex;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.new-task-button {
+    background-color: rgb(160, 151, 151);
+    margin: 10px;
 }

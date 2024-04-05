@@ -2,6 +2,8 @@ import { todoList, createTodoItem } from "./todoModel";
 
 export function todoView() {
     createHeader();
+    const inputDiv = document.createElement("div");
+    inputDiv.classList.add("input-div");
     createTaskNameInput();
     createNewTaskButton();
     renderTodoList();
@@ -18,10 +20,12 @@ function createHeader() {
 }
 
 function createTaskNameInput() {
+    const inputDiv = document.querySelector(".input-div");
     const taskNameInput = document.createElement("input");
     taskNameInput.setAttribute("type", "text");
     taskNameInput.setAttribute("placeholder", "Task Name");
     taskNameInput.classList.add("task-name-input");
+    taskNameInput.classList.add("input-field-button");
     document.body.appendChild(taskNameInput);
 }
 
@@ -29,6 +33,7 @@ function createNewTaskButton() {
     const newTaskButton = document.createElement("button");
     newTaskButton.textContent = "Add a task";
     newTaskButton.classList.add("new-task-button");
+    newTaskButton.classList.add("input-field-button");
     document.body.appendChild(newTaskButton);
 }
 
@@ -63,7 +68,6 @@ function createTaskDiv(todoItem) {
 function createCheckbox(checked) {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.checked = checked;
     return checkbox;
 }
 
@@ -74,7 +78,7 @@ function createTaskName(title) {
 }
 
 function createPriority(priority) {
-    const priorityElement = document.createElement("span");
+    const priorityElement = document.createElement("div");
     priorityElement.textContent = priority;
     return priorityElement;
 }
