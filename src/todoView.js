@@ -4,6 +4,8 @@ export function todoView() {
     createHeader();
     const inputDiv = document.createElement("div");
     inputDiv.classList.add("input-div");
+    document.body.appendChild(inputDiv);
+
     createTaskNameInput();
     createNewTaskButton();
     renderTodoList();
@@ -25,16 +27,15 @@ function createTaskNameInput() {
     taskNameInput.setAttribute("type", "text");
     taskNameInput.setAttribute("placeholder", "Task Name");
     taskNameInput.classList.add("task-name-input");
-    taskNameInput.classList.add("input-field-button");
-    document.body.appendChild(taskNameInput);
+    inputDiv.appendChild(taskNameInput);
 }
 
 function createNewTaskButton() {
+    const inputDiv = document.querySelector(".input-div");
     const newTaskButton = document.createElement("button");
     newTaskButton.textContent = "Add a task";
     newTaskButton.classList.add("new-task-button");
-    newTaskButton.classList.add("input-field-button");
-    document.body.appendChild(newTaskButton);
+    inputDiv.appendChild(newTaskButton);
 }
 
 function renderTodoList() {
@@ -68,6 +69,7 @@ function createTaskDiv(todoItem) {
 function createCheckbox(checked) {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.checked = checked;
     return checkbox;
 }
 

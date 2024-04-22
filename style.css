@@ -42,23 +42,26 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    font-size: 18px;
 }
 
 .task-name-input:focus{
     outline: none;
 }
 
-.input-field-button {
-    display: flex;
+.new-task-button {
+    background-color: rgb(205, 197, 197);
+    margin: 10px;
+    margin-right: 100px;
     padding: 10px;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
     font-weight: 500;
 }
 
-.new-task-button {
-    background-color: rgb(160, 151, 151);
-    margin: 10px;
+.input-div{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
 }
