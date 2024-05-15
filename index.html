@@ -23,8 +23,45 @@
         <header class="header">
           To-Do List
         </header>
+
         <div class="content">
-          <button class="create-task">Create new task</button>
+          <button class="add-task-button">Add a task</button>
+
+          <dialog class="add-task-dialog">
+
+            <form method="dialog" id="add-task-form">
+
+              <div>Add task details: </div>
+
+              <div class="form-row"><input type="text" id="task-name" name="task-name" autofocus
+                  placeholder="Enter task name">
+              </div>
+
+
+              <div class="form-row">
+                <input type="text" id="task-desc" name="task-desc" placeholder="Enter description">
+              </div>
+
+              <div class="form-row">
+                <input type="date" id="date" name="date">
+              </div>
+
+              <div class="form-row">
+                <label for="taskPriority">Priority:</label>
+                <select id="taskPriority" name="taskPriority">
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+
+              <div class="form-buttons">
+                <button>Close</button>
+                <button type="submit" class="submit-add-new-task">Create task</button>
+              </div>
+            </form>
+          </dialog>
+
         </div>
 
       </div>

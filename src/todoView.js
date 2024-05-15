@@ -1,3 +1,4 @@
+import { handleAddTask } from "./createNewTask";
 import { renderSidebar } from "./sidebar";
 import { todoList, createTodoItem } from "./todoModel";
 
@@ -8,13 +9,17 @@ export function todoView() {
     inputDiv.classList.add("input-div");
     content.appendChild(inputDiv);
 
-    // createTaskNameInput();
-    // createNewTaskButton();
     renderTodoList();
     renderSidebar();
 
-    const newTaskButton = document.querySelector(".new-task-button");
-    newTaskButton.addEventListener("click", handleAddTask);
+    const addTaskDialog = document.querySelector('.add-task-dialog');
+
+    const addTaskButton = document.querySelector(".add-task-button");
+    addTaskButton.addEventListener('click', () => {
+        addTaskDialog.showModal()
+        handleAddTask()
+    })
+
 }
 
 function createTaskNameInput() {
@@ -83,18 +88,4 @@ function createPriority(priority) {
     return priorityElement;
 }
 
-function handleAddTask() {
-    const inputName = document.querySelector(".task-name-input");
-    const taskName = inputName.value;
-    if (taskName === "") {
-        alert("Task name cannot be empty");
-        return;
-    }
 
-    const newTask = createTodoItem(taskName, "", "", "low");
-    todoList.push(newTask);
-
-    const taskList = document.querySelector(".task-list");
-    taskList.remove();
-    renderTodoList();
-}

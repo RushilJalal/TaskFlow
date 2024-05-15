@@ -58,11 +58,11 @@ body {
     gap: 10px;
 }
 
-.project-list button:hover{
+.project-list button:hover {
     background-color: #1b98be;
 }
 
-.project-list button:active{
+.project-list button:active {
     background-color: black;
 }
 
@@ -105,7 +105,7 @@ body {
     outline: none;
 }
 
-.create-task {
+.add-task-button {
     background-color: rgb(205, 197, 197);
     margin: 10px;
     margin-right: 100px;
@@ -114,6 +114,14 @@ body {
     cursor: pointer;
     font-size: 18px;
     font-weight: 500;
+}
+
+.add-task-button:hover {
+    background-color: rgb(140, 136, 136);
+}
+
+.add-task-button:active {
+    background-color: rgb(70, 67, 67);
 }
 
 .input-div {
@@ -151,4 +159,37 @@ li {
     padding: 10px;
 }
 
+.add-task-dialog {
+    border: 0;
+}
 
+::backdrop {
+    background-color: black;
+    opacity: 0.6;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.form-buttons button {
+    background-color: rgb(205, 197, 197);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form-buttons button:hover {
+    background-color: rgb(140, 136, 136);
+}
+
+.form-buttons button:active {
+    background-color: rgb(70, 67, 67);
+}
