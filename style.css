@@ -159,6 +159,10 @@ li {
     padding: 10px;
 }
 
+dialog {
+    display: none;
+}
+
 .add-task-dialog {
     border: 0;
 }

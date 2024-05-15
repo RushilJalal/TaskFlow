@@ -1,6 +1,6 @@
 import { handleAddTask } from "./createNewTask";
 import { renderSidebar } from "./sidebar";
-import { todoList, createTodoItem } from "./todoModel";
+import { todoList } from "./todoModel";
 
 
 export function todoView() {
@@ -16,31 +16,21 @@ export function todoView() {
 
     const addTaskButton = document.querySelector(".add-task-button");
     addTaskButton.addEventListener('click', () => {
+        addTaskDialog.style.display = 'block';
         addTaskDialog.showModal()
-        handleAddTask()
+    });
+
+    const close = document.querySelector('#close-button')
+    close.addEventListener('click', () => {
+        addTaskDialog.style.display = 'none'
     })
 
+    const submitNewTaskFormButton = document.querySelector('.submit-add-new-task')
+    submitNewTaskFormButton.addEventListener('click', handleAddTask())
+
 }
 
-function createTaskNameInput() {
-    const inputDiv = document.querySelector(".input-div");
-    const taskNameInput = document.createElement("input");
-    taskNameInput.setAttribute("type", "text");
-    taskNameInput.setAttribute("placeholder", "Enter task name");
-    taskNameInput.classList.add("task-name-input");
-    taskNameInput.classList.add("input-container");
-    inputDiv.appendChild(taskNameInput);
-}
-
-function createNewTaskButton() {
-    const inputDiv = document.querySelector(".input-div");
-    const newTaskButton = document.createElement("button");
-    newTaskButton.textContent = "Add a task";
-    newTaskButton.classList.add("new-task-button");
-    inputDiv.appendChild(newTaskButton);
-}
-
-function renderTodoList() {
+export function renderTodoList() {
     const content = document.querySelector('.content');
     const taskList = document.createElement("ul");
     taskList.classList.add("task-list");
@@ -57,11 +47,14 @@ function createTaskDiv(todoItem) {
     const taskDiv = document.createElement("div");
     taskDiv.classList.add("task-item");
 
-    const checkbox = createCheckbox(todoItem.checked);
+    const checkbox = createCheckbox();
     taskDiv.appendChild(checkbox);
 
     const taskName = createTaskName(todoItem.title);
     taskDiv.appendChild(taskName);
+
+    const date = createDate(todoItem.dueDate)
+    taskDiv.appendChild(date);
 
     const priority = createPriority(todoItem.priority);
     taskDiv.appendChild(priority);
@@ -69,10 +62,9 @@ function createTaskDiv(todoItem) {
     return taskDiv;
 }
 
-function createCheckbox(checked) {
+function createCheckbox() {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.checked = checked;
     return checkbox;
 }
 
@@ -80,6 +72,12 @@ function createTaskName(title) {
     const taskName = document.createElement("div");
     taskName.textContent = title;
     return taskName;
+}
+
+function createDate(date) {
+    const dateDiv = document.createElement('div')
+    dateDiv.textContent = date
+    return dateDiv
 }
 
 function createPriority(priority) {
