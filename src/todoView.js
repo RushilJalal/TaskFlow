@@ -1,7 +1,8 @@
+import { renderSidebar } from "./sidebar";
 import { todoList, createTodoItem } from "./todoModel";
 
+
 export function todoView() {
-    createHeader();
     const inputDiv = document.createElement("div");
     inputDiv.classList.add("input-div");
     document.body.appendChild(inputDiv);
@@ -14,19 +15,13 @@ export function todoView() {
     newTaskButton.addEventListener("click", handleAddTask);
 }
 
-function createHeader() {
-    const header = document.createElement("h1");
-    header.textContent = "To-Do List";
-    header.classList.add("header");
-    document.body.appendChild(header);
-}
-
 function createTaskNameInput() {
     const inputDiv = document.querySelector(".input-div");
     const taskNameInput = document.createElement("input");
     taskNameInput.setAttribute("type", "text");
-    taskNameInput.setAttribute("placeholder", "Task Name");
+    taskNameInput.setAttribute("placeholder", "Enter task name");
     taskNameInput.classList.add("task-name-input");
+    taskNameInput.classList.add("input-container");
     inputDiv.appendChild(taskNameInput);
 }
 

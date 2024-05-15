@@ -1,17 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-body{
+body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #5674c0;
+    background-color: #1b98be;
     font-size: 20px;
 }
 
-.header{
+.entire {
+    display: grid;
+    
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: rgb(255, 255, 255);
     padding: 10px 0;
     text-align: center;
+    background-color: rgb(96, 93, 93);
+    height: 100px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.content {
+    flex:1;
 }
 
 .task-list {
@@ -26,13 +42,14 @@ body{
     align-items: center;
     padding: 10px 50px;
     border-bottom: 1px solid #e0e0e0;
-    background-color: rgb(67, 65, 65);
+    background-color: rgb(74, 74, 74);
     border-radius: 10px;
     margin-bottom: 10px;
     color: white;
+    height: 30px;
 }
 
-.task-name-input{
+.task-name-input {
     margin: 10px;
     padding: 10px;
     border: 1px solid #e0e0e0;
@@ -41,11 +58,14 @@ body{
     display: block;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 50%;
     font-size: 18px;
 }
 
-.task-name-input:focus{
+.task-name-input:focus {
     outline: none;
 }
 
@@ -60,8 +80,47 @@ body{
     font-weight: 500;
 }
 
-.input-div{
+.input-div {
     display: flex;
     justify-content: space-between;
     gap: 30px;
+}
+
+.sidebar {
+    background-color: rgb(68, 68, 68);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    width: 200px;
+    height: 100%;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+.add-project-button {
+    background-color: rgb(190, 190, 190);
+    border-radius: 15px;
+    padding: 15px;
+    color: black;
+    font-weight: bold;
+}
+
+.heading-div {
+    display: flex;
+    
+}
+
+.sidebar-heading {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    padding: 10px;
 }
