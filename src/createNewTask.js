@@ -5,6 +5,7 @@ import { generateTodoObj, todoList } from "./todoModel";
 import { renderTodoList } from "./todoView";
 
 export function handleAddTask() {
+    const addTaskDialog = document.querySelector('.add-task-dialog');
     const nameInput = document.querySelector('#task-name')
     const descInput = document.querySelector('#task-desc')
     const dateInput = document.querySelector('#date')
@@ -12,10 +13,19 @@ export function handleAddTask() {
 
     const name = nameInput.value;
     const desc = descInput.value;
-    const date = new Date(dateInput.value);
+    const date = dateInput.value;
     const priority = priorityInput.value;
 
+    if (name === '') {
+        alert('Enter name')
+        return;
+    }
+
     createTodoItem(name, desc, date, priority)
+
+    addTaskDialog.style.display = 'none'
+    const form = document.querySelector('#add-task-form')
+    form.reset();
 }
 
 function createTodoItem(name, desc, date, priority) {
