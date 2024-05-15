@@ -1,17 +1,17 @@
+import { renderSidebar } from "./sidebar";
 import { todoList, createTodoItem } from "./todoModel";
 
 
 export function todoView() {
-    const content = document.getElementsByClassName('content');
+    const content = document.querySelector('.content');
     const inputDiv = document.createElement("div");
     inputDiv.classList.add("input-div");
     content.appendChild(inputDiv);
 
-    createTaskNameInput();
-    createNewTaskButton();
+    // createTaskNameInput();
+    // createNewTaskButton();
     renderTodoList();
-
-    document.body.appendChild(content)
+    renderSidebar();
 
     const newTaskButton = document.querySelector(".new-task-button");
     newTaskButton.addEventListener("click", handleAddTask);
@@ -36,6 +36,7 @@ function createNewTaskButton() {
 }
 
 function renderTodoList() {
+    const content = document.querySelector('.content');
     const taskList = document.createElement("ul");
     taskList.classList.add("task-list");
 
@@ -44,7 +45,7 @@ function renderTodoList() {
         taskList.appendChild(taskDiv);
     });
 
-    document.body.appendChild(taskList);
+    content.appendChild(taskList);
 }
 
 function createTaskDiv(todoItem) {
