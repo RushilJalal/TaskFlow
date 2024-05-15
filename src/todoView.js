@@ -1,15 +1,17 @@
-import { renderSidebar } from "./sidebar";
 import { todoList, createTodoItem } from "./todoModel";
 
 
 export function todoView() {
+    const content = document.getElementsByClassName('content');
     const inputDiv = document.createElement("div");
     inputDiv.classList.add("input-div");
-    document.body.appendChild(inputDiv);
+    content.appendChild(inputDiv);
 
     createTaskNameInput();
     createNewTaskButton();
     renderTodoList();
+
+    document.body.appendChild(content)
 
     const newTaskButton = document.querySelector(".new-task-button");
     newTaskButton.addEventListener("click", handleAddTask);
