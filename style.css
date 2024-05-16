@@ -11,12 +11,11 @@ body {
 .entire {
   display: grid;
   grid-template-columns: 300px 1fr;
-  grid-template-rows: 20vh 80vh;
+  grid-template-rows: 20vh minmax(80vh, auto);
 }
 
 .header {
   color: rgb(255, 255, 255);
-
   text-align: center;
   background-color: rgb(96, 93, 93);
   font-size: 2em;
@@ -70,39 +69,19 @@ body {
 
 .task-list {
   list-style-type: none;
-  /* padding: 20px; */
+  padding: 20px;
 }
 
 .task-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px;
+  padding: 15px 50px;
   border-radius: 10px;
   margin-bottom: 10px;
   color: black;
   height: 30px;
   border: 2px solid black;
-}
-
-.task-name-input {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
-  /* center the input box  */
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50%;
-  font-size: 18px;
-}
-
-.task-name-input:focus {
-  outline: none;
 }
 
 .add-task-button {
@@ -113,14 +92,6 @@ body {
   font-size: 18px;
   font-weight: 500;
   border: 2px solid black;
-}
-
-.add-task-button:hover {
-  background-color: rgb(140, 136, 136);
-}
-
-.add-task-button:active {
-  background-color: rgb(70, 67, 67);
 }
 
 .input-div {
@@ -222,7 +193,8 @@ button:active {
 }
 
 .edit-button,
-.delete-button {
+.delete-button,
+.desc-button {
   border-radius: 10px;
   background-color: rgb(205, 197, 197);
   margin: 5px;
