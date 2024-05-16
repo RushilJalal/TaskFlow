@@ -1,8 +1,8 @@
 //executes when add task button inside modal is clicked
 // extracts info from forms and creates new task
 
+import { renderTodoList } from "./renderTodoList";
 import { generateTodoObj, todoList } from "./todoModel";
-import { renderTodoList } from "./todoView";
 
 export function handleAddTask() {
     const addTaskDialog = document.querySelector('.add-task-dialog');
@@ -18,7 +18,7 @@ export function handleAddTask() {
 
     if (name === '') {
         alert('Enter name')
-        return;
+        return
     }
 
     createTodoItem(name, desc, date, priority)
