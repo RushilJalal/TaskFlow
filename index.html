@@ -1,50 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-do List</title>
+    <link rel="icon" href="/todo-list-favicon.png" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>To-do List</title>
-  <link rel="icon" href="/todo-list-favicon.png">
-</head>
+  <body>
+    <div id="app">
+      <div class="entire">
+        <nav class="sidebar">
+          <div class="heading-div">
+            <h2>Projects</h2>
+            <button class="add-project-button">+</button>
+          </div>
+          <div class="project-list"></div>
+        </nav>
 
-<body>
-  <div id="app">
-    <div class="entire">
-
-      <nav class="sidebar">
-        <div class="heading-div">
-          <h2>Projects</h2>
-          <button class="add-project-button">+</button>
+        <div class="header">
+          <header>To-Do List</header>
+          <img
+            src="/todo-list-favicon.png"
+            alt="todo-list-picture"
+            class="header-pic"
+          />
         </div>
-        <div class="project-list"></div>
-      </nav>
-
-      <div class="right">
-        <header class="header">
-          To-Do List
-        </header>
 
         <div class="content">
           <button class="add-task-button">Add a task</button>
 
           <dialog class="add-task-dialog">
-
             <form method="dialog" id="add-task-form">
-
-              <div>Add task details: </div>
-
-              <div class="form-row"><input type="text" id="task-name" name="task-name" autofocus
-                  placeholder="Enter task name">
-              </div>
-
+              <div>Add task details:</div>
 
               <div class="form-row">
-                <input type="text" id="task-desc" name="task-desc" placeholder="Enter description">
+                <input
+                  type="text"
+                  id="task-name"
+                  name="task-name"
+                  autofocus
+                  placeholder="Enter task name"
+                />
               </div>
 
               <div class="form-row">
-                <input type="date" id="date" name="date">
+                <input
+                  type="text"
+                  id="task-desc"
+                  name="task-desc"
+                  placeholder="Enter description"
+                />
+              </div>
+
+              <div class="form-row">
+                <input type="date" id="date" name="date" />
               </div>
 
               <div class="form-row">
@@ -56,20 +66,18 @@
                 </select>
               </div>
 
-              
               <div class="form-buttons">
                 <button id="close-button">Close</button>
-                <button type="submit" class="submit-add-new-task">Create task</button>
+                <button type="submit" class="submit-add-new-task">
+                  Create task
+                </button>
               </div>
             </form>
           </dialog>
-
         </div>
-
       </div>
     </div>
-  </div>
-  <script type="module" defer src="/main.js"></script>
-</body>
 
+    <script type="module" defer src="/main.js"></script>
+  </body>
 </html>

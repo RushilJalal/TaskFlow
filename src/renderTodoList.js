@@ -32,6 +32,12 @@ export function createTaskDiv(todoItem) {
     const priority = createPriority(todoItem.priority);
     taskDiv.appendChild(priority);
 
+    const editTaskButton = createEditTaskButton()
+    taskDiv.appendChild(editTaskButton)
+
+    const deleteButton = createDeleteButton()
+    taskDiv.appendChild(deleteButton)
+
     return taskDiv;
 }
 
@@ -59,6 +65,25 @@ function createPriority(priority) {
     priorityElement.textContent = priority;
     return priorityElement;
 }
+
+function createEditTaskButton()
+{
+    const editButton = document.createElement('button')
+    editButton.textContent = 'Edit Task'
+    editButton.classList.add('edit-button')
+    return editButton
+}
+
+
+function createDeleteButton()
+{
+    const deleteButton = document.createElement('button')
+    deleteButton.textContent = 'Delete'
+    deleteButton.classList.add('delete-button')
+    return deleteButton
+}
+
+
 
 function toggleStrikeThrough()
 {
