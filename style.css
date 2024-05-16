@@ -195,3 +195,7 @@ form {
 .form-buttons button:active {
     background-color: rgb(70, 67, 67);
 }
+
+.task-done {
+    text-decoration: line-through;
+}

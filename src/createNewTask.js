@@ -15,6 +15,7 @@ export function handleAddTask() {
     const desc = descInput.value;
     const date = dateInput.value;
     const priority = priorityInput.value;
+    
 
     if (name === '') {
         alert('Enter name')
