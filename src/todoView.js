@@ -35,17 +35,6 @@ export function todoView() {
     submitNewTaskFormButton.addEventListener('click', handleAddTask)
 
     
-        document.querySelector('.task-list').addEventListener('change', (event) => {
-          if (event.target.type === 'checkbox') {
-            const taskText = event.target.nextElementSibling;
-            if (event.target.checked) {
-              taskText.style.textDecoration = 'line-through';
-            } else {
-              taskText.style.textDecoration = 'none';
-            }
-          }
-        });
-      
       
 }
 

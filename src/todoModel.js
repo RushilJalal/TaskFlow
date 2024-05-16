@@ -33,14 +33,4 @@ export function setTaskPriorityColor() {
     })
 }
 
-export function toggleStrikeThrough(event)
-{
-    var taskText = event.target.nextElementSibling;
-    if (event.target.checked) {
-      taskText.classList.add('task-done');
-    } else {
-      taskText.classList.remove('task-done');
-    }
-}
-
 

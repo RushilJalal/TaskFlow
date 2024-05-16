@@ -12,6 +12,8 @@ export function renderTodoList() {
 
     content.appendChild(taskList);
     setTaskPriorityColor();
+
+    toggleStrikeThrough();
 }
 
 export function createTaskDiv(todoItem) {
@@ -36,6 +38,7 @@ export function createTaskDiv(todoItem) {
 function createCheckbox() {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
+    checkbox.classList.add('checkbox')
     return checkbox;
 }
 
@@ -55,4 +58,16 @@ function createPriority(priority) {
     const priorityElement = document.createElement("div");
     priorityElement.textContent = priority;
     return priorityElement;
+}
+
+function toggleStrikeThrough()
+{
+    document.querySelectorAll('.task-list').forEach(taskList => {
+        taskList.addEventListener('click', (event) => {
+          if (event.target.type === 'checkbox') {
+            const taskText = event.target.nextElementSibling;
+            taskText.style.textDecoration = event.target.checked ? 'line-through' : 'none';
+          }
+        });
+      });
 }
