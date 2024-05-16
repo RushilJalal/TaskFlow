@@ -10,6 +10,7 @@ export function todoView() {
     inputDiv.classList.add("input-div");
     content.appendChild(inputDiv);
 
+
     renderTodoList();
     renderSidebar();
 

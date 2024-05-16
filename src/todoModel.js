@@ -18,7 +18,7 @@ export function setTaskPriorityColor() {
     taskList.forEach((task) => {
         let priorityDiv = task.querySelector("div:last-child");
         let priority = priorityDiv.textContent;
-        console.log(priority);
+
         switch (priority) {
             case 'High':
                 task.style.backgroundColor = 'red';
@@ -33,6 +33,4 @@ export function setTaskPriorityColor() {
     })
 }
 
-export function sortTasksOnPriority() {
 
-}
