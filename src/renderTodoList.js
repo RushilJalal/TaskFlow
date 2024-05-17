@@ -1,5 +1,7 @@
-import { setTaskPriorityColor, todoList } from "./todoModel";
-import { showTaskDetails } from "./todoView";
+import { showTaskDetails } from "./showTaskDetails";
+import { todoList } from "./todoModel";
+import { setTaskPriorityColor } from "./setTaskPriority";
+import { toggleStrikeThrough } from "./todoView";
 
 export function renderTodoList() {
   const content = document.querySelector(".content");
@@ -19,13 +21,11 @@ export function renderTodoList() {
     const detailsButton = taskDiv.querySelector(".desc-button");
     detailsButton.addEventListener("click", () => {
       showTaskDetails(index);
-      console.log("hello");
     });
   });
 
   content.appendChild(taskList);
   setTaskPriorityColor();
-
   toggleStrikeThrough();
 }
 
@@ -101,17 +101,4 @@ function createDeleteButton() {
   deleteButton.textContent = "Delete";
   deleteButton.classList.add("delete-button");
   return deleteButton;
-}
-
-function toggleStrikeThrough() {
-  document.querySelectorAll(".task-list").forEach((taskList) => {
-    taskList.addEventListener("click", (event) => {
-      if (event.target.type === "checkbox") {
-        const taskText = event.target.nextElementSibling;
-        taskText.style.textDecoration = event.target.checked
-          ? "line-through"
-          : "none";
-      }
-    });
-  });
 }

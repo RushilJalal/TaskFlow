@@ -1,7 +1,6 @@
 import { handleAddTask } from "./createNewTask";
 import { renderTodoList } from "./renderTodoList";
-import { renderSidebar } from "./sidebar";
-import { todoList } from "./todoModel";
+import { renderSidebar } from "./renderSidebar";
 
 export function todoView() {
   const content = document.querySelector(".content");
@@ -35,29 +34,15 @@ export function todoView() {
   submitNewTaskFormButton.addEventListener("click", handleAddTask);
 }
 
-//display task name and task description on clicking details button
-export function showTaskDetails(index) {
-  const taskDetailsDialog = document.createElement("dialog");
-  taskDetailsDialog.classList.add("details-dialog");
-
-  const taskName = document.createElement("div");
-  const taskDesc = document.createElement("div");
-  const closeButton = document.createElement("button");
-
-  closeButton.textContent = "Close";
-
-  taskDetailsDialog.appendChild(taskName);
-  taskDetailsDialog.appendChild(taskDesc);
-  taskDetailsDialog.appendChild(closeButton);
-
-  taskName.textContent = `Title: ${todoList[index].title}`;
-  taskDesc.textContent = `Description: ${todoList[index].description}`;
-
-  document.body.appendChild(taskDetailsDialog);
-  taskDetailsDialog.showModal();
-
-  closeButton.addEventListener("click", () => {
-    taskDetailsDialog.close();
-    taskDetailsDialog.remove();
+export function toggleStrikeThrough() {
+  document.querySelectorAll(".task-list").forEach((taskList) => {
+    taskList.addEventListener("click", (event) => {
+      if (event.target.type === "checkbox") {
+        const taskText = event.target.nextElementSibling;
+        taskText.style.textDecoration = event.target.checked
+          ? "line-through"
+          : "none";
+      }
+    });
   });
 }
