@@ -33,6 +33,6 @@ function createTodoItem(name, desc, date, priority) {
   todoList.push(newTask);
 
   const taskList = document.querySelector(".task-list");
-  taskList.remove();
+  taskList.textContent = "";
   renderTodoList();
 }

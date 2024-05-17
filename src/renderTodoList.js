@@ -2,12 +2,18 @@ import { setTaskPriorityColor, todoList } from "./todoModel";
 
 export function renderTodoList() {
   const content = document.querySelector(".content");
-  const taskList = document.createElement("ul");
-  taskList.classList.add("task-list");
+  const taskList = document.querySelector(".task-list");
 
-  todoList.forEach((todoItem) => {
+  todoList.forEach((todoItem, index) => {
     const taskDiv = createTaskDiv(todoItem);
     taskList.appendChild(taskDiv);
+
+    const deleteButton = taskDiv.querySelector(".delete-button");
+    deleteButton.addEventListener("click", () => {
+      todoList.splice(index, 1);
+      taskList.textContent = "";
+      renderTodoList();
+    });
   });
 
   content.appendChild(taskList);
