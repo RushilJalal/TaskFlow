@@ -1,4 +1,5 @@
 import { setTaskPriorityColor, todoList } from "./todoModel";
+import { showTaskDetails } from "./todoView";
 
 export function renderTodoList() {
   const content = document.querySelector(".content");
@@ -13,6 +14,12 @@ export function renderTodoList() {
       todoList.splice(index, 1);
       taskList.textContent = "";
       renderTodoList();
+    });
+
+    const detailsButton = taskDiv.querySelector(".desc-button");
+    detailsButton.addEventListener("click", () => {
+      showTaskDetails(index);
+      console.log("hello");
     });
   });
 

@@ -24,6 +24,7 @@ export function handleAddTask() {
   createTodoItem(name, desc, date, priority);
 
   addTaskDialog.style.display = "none";
+  addTaskDialog.close();
   const form = document.querySelector("#add-task-form");
   form.reset();
 }
