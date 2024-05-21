@@ -2,6 +2,7 @@ import { showTaskDetails } from "./showTaskDetails";
 import { todoList } from "./todoModel";
 import { setTaskPriorityColor } from "./setTaskPriority";
 import { toggleStrikeThrough } from "./todoView";
+import { showEditTaskDialog } from "./editTask";
 
 export function renderTodoList() {
   const content = document.querySelector(".content");
@@ -22,6 +23,9 @@ export function renderTodoList() {
     detailsButton.addEventListener("click", () => {
       showTaskDetails(index);
     });
+
+    const editTaskButton = taskDiv.querySelector(".edit-button");
+    editTaskButton.addEventListener("click", () => { showEditTaskDialog(index) })
   });
 
   content.appendChild(taskList);

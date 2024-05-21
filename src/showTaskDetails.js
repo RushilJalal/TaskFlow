@@ -18,6 +18,9 @@ export function showTaskDetails(index) {
   taskName.textContent = `Title: ${todoList[index].title}`;
   taskDesc.textContent = `Description: ${todoList[index].description}`;
 
+  if (todoList[index].description === "")
+    taskDesc.textContent = "Description: None";
+
   document.body.appendChild(taskDetailsDialog);
   taskDetailsDialog.showModal();
 

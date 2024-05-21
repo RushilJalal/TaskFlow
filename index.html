@@ -76,6 +76,46 @@
               </div>
             </form>
           </dialog>
+
+          <!-- edit task dialog -->
+          <dialog class="edit-task-dialog">
+            <form method="dialog" id="edit-task-form">
+              <div>Edit task details:</div>
+
+              <div class="form-row">
+                <input
+                  type="text"
+                  class="task-name"
+                  name="task-name"
+                  autofocus
+                />
+              </div>
+
+              <div class="form-row">
+                <input type="text" class="task-desc" name="task-desc" />
+              </div>
+
+              <div class="form-row">
+                <input type="date" class="date" name="date" />
+              </div>
+
+              <div class="form-row">
+                <label for="taskPriority">Priority:</label>
+                <select class="task-priority" name="task-priority">
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
+              </div>
+
+              <div class="form-buttons">
+                <button class="close-edit-button">Close</button>
+                <button type="submit" class="submit-add-new-task">
+                  Edit task
+                </button>
+              </div>
+            </form>
+          </dialog>
         </div>
       </div>
     </div>

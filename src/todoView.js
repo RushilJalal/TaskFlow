@@ -3,11 +3,6 @@ import { renderTodoList } from "./renderTodoList";
 import { renderSidebar } from "./renderSidebar";
 
 export function todoView() {
-  const content = document.querySelector(".content");
-  const inputDiv = document.createElement("div");
-  inputDiv.classList.add("input-div");
-  content.appendChild(inputDiv);
-
   renderTodoList();
   renderSidebar();
 
@@ -15,7 +10,7 @@ export function todoView() {
 
   const addTaskButton = document.querySelector(".add-task-button");
   addTaskButton.addEventListener("click", () => {
-    addTaskDialog.style.display = "block";
+    addTaskDialog.style.display = "flex";
     addTaskDialog.showModal();
   });
 
@@ -26,6 +21,14 @@ export function todoView() {
 
     //reset form when close button clicked
     form.reset();
+  });
+
+  //when close button in edit task form is clicked, close the dialog
+  const closeEditTaskDialog = document.querySelector(".close-edit-button");
+  closeEditTaskDialog.addEventListener("click", () => {
+    const editTaskDialog = document.querySelector(".edit-task-dialog");
+    editTaskDialog.style.display = "none";
+    editTaskDialog.close();
   });
 
   const submitNewTaskFormButton = document.querySelector(
