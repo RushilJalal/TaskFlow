@@ -1,5 +1,6 @@
 // simple js to control edit task form and dialog
 
+import { renderTodoList } from "./renderTodoList"
 import { todoList } from "./todoModel"
 
 export function showEditTaskDialog(index) {
@@ -11,12 +12,13 @@ export function showEditTaskDialog(index) {
     const taskName = document.querySelector(".task-name")
     const taskDesc = document.querySelector(".task-desc")
     const taskDate = document.querySelector(".date")
-    const taskPriority = document.querySelector(".task-priority")
+    const taskPriority = document.querySelector(".edit-task-priority")
 
-    taskName.textContent = todoList[index].title
-    taskDesc.textContent = todoList[index].description
-    taskDate.textContent = todoList[index].dueDate
-    taskPriority.textContent = todoList[index].priority
+    // set the values of the task to be edited
+    taskName.value = todoList[index].title
+    taskDesc.value = todoList[index].description
+    taskDate.value = todoList[index].dueDate
+    taskPriority.value = todoList[index].priority
 
     const submitEditTaskFormButton = document.querySelector(".submit-edit-task")
     submitEditTaskFormButton.addEventListener("click", () => {
@@ -34,6 +36,11 @@ export function showEditTaskDialog(index) {
 
         dialog.style.display = "none"
         dialog.close()
+
+        const taskList = document.querySelector(".task-list")
+        taskList.textContent = ""
+        renderTodoList()
+
     })
 
     const close = document.querySelector(".close-button")
@@ -43,3 +50,13 @@ export function showEditTaskDialog(index) {
     })
 
 }
+
+//sets the task parameters to the new values given by user as input
+function editTodoItem(index, name, desc, date, priority) {
+    todoList[index].title = name
+    todoList[index].description = desc
+    todoList[index].dueDate = date
+    todoList[index].priority = priority
+}
+
+

@@ -8,6 +8,8 @@ export function renderTodoList() {
   const content = document.querySelector(".content");
   const taskList = document.querySelector(".task-list");
 
+  taskList.textContent = "";
+
   todoList.forEach((todoItem, index) => {
     const taskDiv = createTaskDiv(todoItem);
     taskList.appendChild(taskDiv);
@@ -25,7 +27,9 @@ export function renderTodoList() {
     });
 
     const editTaskButton = taskDiv.querySelector(".edit-button");
-    editTaskButton.addEventListener("click", () => { showEditTaskDialog(index) })
+    editTaskButton.addEventListener("click", () => {
+      showEditTaskDialog(index)
+    })
   });
 
   content.appendChild(taskList);

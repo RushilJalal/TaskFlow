@@ -31,9 +31,7 @@ export function todoView() {
     editTaskDialog.close();
   });
 
-  const submitNewTaskFormButton = document.querySelector(
-    ".submit-add-new-task"
-  );
+  const submitNewTaskFormButton = document.querySelector(".submit-add-new-task");
   submitNewTaskFormButton.addEventListener("click", handleAddTask);
 }
 
