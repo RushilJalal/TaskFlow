@@ -10,16 +10,13 @@ export function todoView() {
   renderTodoList(projectIndex);
   renderSidebar();
 
-  // event listener on project list button
-  const projectList = document.querySelector(".project-list");
-  projectList.addEventListener("click", (event) => {
-    if (event.target.tagName === "BUTTON") {
-      projectIndex = todoList.findIndex(
-        (project) => project.projectName === event.target.textContent
-      );
+  // event listener on project list buttons
+  const projectListButtons = document.querySelectorAll(".project-item-button");
+  projectListButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      projectIndex = index;
       renderTodoList(projectIndex);
-      console.log("new project index", projectIndex)
-    }
+    });
   });
 
   const addTaskDialog = document.querySelector(".add-task-dialog");
