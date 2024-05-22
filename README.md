@@ -98,28 +98,6 @@ function loadTodoList() {
 export let todoList = loadTodoList();
 ```
 
-## Project Structure
-
-```plaintext
-todolist-app/
-├── public/
-│   ├── favicon.ico
-│   └── index.html
-├── src/
-│   ├── assets/
-│   │   └── demo.gif
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   ├── main.js
-│   │   ├── todoModel.js
-│   │   ├── renderSidebar.js
-│   │   └── renderTodoList.js
-├── .gitignore
-├── package.json
-├── README.md
-└── vite.config.js
-```
 
 - **public/**: Contains static assets like the favicon and `index.html`.
 - **src/**: Contains the main application code.
