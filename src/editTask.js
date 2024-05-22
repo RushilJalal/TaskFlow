@@ -45,7 +45,7 @@ export function showEditTaskDialog(projectIndex, index) {
 
         const taskList = document.querySelector(".task-list");
         taskList.textContent = "";
-        renderTodoList();
+        renderTodoList(projectIndex);
     };
 
     submitEditTaskFormButton.addEventListener("click", currentSubmitHandler);

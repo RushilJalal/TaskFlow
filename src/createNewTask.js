@@ -34,6 +34,5 @@ function createTodoItem(projectIndex, name, desc, date, priority) {
   todoList[projectIndex].tasks.push(newTask);
 
   const taskList = document.querySelector(".task-list");
-  // taskList.textContent = "";
   renderTodoList(projectIndex);
 }

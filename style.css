@@ -4,7 +4,7 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #1b98be;
+  background-color: #d87ed5;
   font-size: 20px;
 }
 
@@ -49,15 +49,15 @@ body {
   gap: 10px;
 }
 
-.project-list button {
+/* .project-list button {
   display: flex;
   flex-direction: column;
   background-color: transparent;
   border: 0;
-  color: white;
+  color: black;
   font-size: large;
   gap: 10px;
-}
+} */
 
 .project-list button:hover {
   background-color: #1b98be;
@@ -226,4 +226,14 @@ button:active {
   border-radius: 5px;
   font-size: 18px;
   font-weight: 500;
+}
+
+.project-list button {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  font-size: large;
+  gap: 10px;
 }

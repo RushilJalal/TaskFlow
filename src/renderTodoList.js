@@ -10,7 +10,14 @@ export function renderTodoList(projectIndex) {
 
   taskList.textContent = "";
 
+  // Check if projectIndex is within the valid range
+  if (projectIndex < 0 || projectIndex >= todoList.length) {
+    console.error("Invalid project index");
+    return;
+  }
+
   const project = todoList[projectIndex];
+
   project.tasks.forEach((task, taskIndex) => {
     const taskDiv = createTaskDiv(task);
     taskList.appendChild(taskDiv);
