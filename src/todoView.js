@@ -1,6 +1,6 @@
 import { handleAddTask } from "./createNewTask";
 import { renderTodoList } from "./renderTodoList";
-import { renderSidebar } from "./renderSidebar";
+import { renderSidebar, showAddProjectDialog } from "./renderSidebar";
 
 //default project index is 0
 let projectIndex = 0
@@ -46,6 +46,12 @@ export function todoView() {
 
   const submitNewTaskFormButton = document.querySelector(".submit-add-new-task");
   submitNewTaskFormButton.addEventListener("click", () => { handleAddTask(projectIndex) });
+
+  // event listener on add project button
+  const addProjectButton = document.querySelector(".add-project-button");
+  addProjectButton.addEventListener("click", () => {
+    showAddProjectDialog();
+  });
 }
 
 export function toggleStrikeThrough() {

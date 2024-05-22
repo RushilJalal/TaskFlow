@@ -8,7 +8,7 @@ export function showTaskDetails(projectIndex, index) {
   const taskName = document.createElement("div");
   const taskDesc = document.createElement("div");
   const closeButton = document.createElement("button");
-
+  closeButton.classList.add("close-desc-button");
   closeButton.textContent = "Close";
 
   taskDetailsDialog.appendChild(taskName);
