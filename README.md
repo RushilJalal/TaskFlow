@@ -32,7 +32,7 @@ Before you begin, ensure you have the following installed on your system:
 1. **Clone the Repository**
 
     ```sh
-    git clone https://github.com/yourusername/todo-list.git
+    git clone https://github.com/RushilJalal/todo-list.git
     cd todo-list
     ```
 
