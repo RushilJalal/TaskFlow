@@ -45,7 +45,7 @@ export function todoView() {
   });
 
   const submitNewTaskFormButton = document.querySelector(".submit-add-new-task");
-  submitNewTaskFormButton.addEventListener("click", handleAddTask);
+  submitNewTaskFormButton.addEventListener("click", () => { handleAddTask(projectIndex) });
 }
 
 export function toggleStrikeThrough() {
