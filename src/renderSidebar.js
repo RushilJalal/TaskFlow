@@ -1,5 +1,6 @@
 import { todoList } from "./todoModel";
 import { renderTodoList } from "./renderTodoList";
+import { saveTodoList } from "./todoModel";
 
 export function renderSidebar() {
   const projectList = document.querySelector(".project-list");
@@ -25,6 +26,8 @@ export function renderSidebar() {
     });
 
     projectList.appendChild(projectItem);
+
+    saveTodoList()
   });
 }
 

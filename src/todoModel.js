@@ -7,7 +7,7 @@ export function generateTodoObj(title, description, dueDate, priority) {
   };
 }
 
-export const todoList = [
+export let todoList = [
   {
     projectName: "All",
     tasks: [
@@ -77,3 +77,28 @@ export const todoList = [
     ]
   }
 ];
+
+// get todoList from local storage
+export function getTodoList() {
+  const todoList = localStorage.getItem("todoList");
+  if (todoList) {
+    return JSON.parse(todoList);
+  }
+  return [];
+}
+
+
+export function saveTodoList() {
+  localStorage.setItem('todoList', JSON.stringify(todoList))
+}
+
+function loadTodoList() {
+  let savedTodoList = localStorage.getItem('todoList')
+
+  if (savedTodoList)
+    return JSON.parse(savedTodoList)
+  else
+    return todoList;
+}
+
+todoList = loadTodoList();

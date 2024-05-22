@@ -1,8 +1,9 @@
 import { showTaskDetails } from "./showTaskDetails";
-import { todoList } from "./todoModel";
+import { saveTodoList} from "./todoModel";
 import { setTaskPriorityColor } from "./setTaskPriority";
 import { toggleStrikeThrough } from "./todoView";
 import { showEditTaskDialog } from "./editTask";
+import { todoList } from "./todoModel";
 
 export function renderTodoList(projectIndex) {
   const content = document.querySelector(".content");
@@ -25,6 +26,7 @@ export function renderTodoList(projectIndex) {
     const deleteButton = taskDiv.querySelector(".delete-button");
     deleteButton.addEventListener("click", () => {
       project.tasks.splice(taskIndex, 1);
+      saveTodoList();
       renderTodoList(projectIndex);
     });
 
@@ -42,6 +44,7 @@ export function renderTodoList(projectIndex) {
   content.appendChild(taskList);
   setTaskPriorityColor();
   toggleStrikeThrough();
+  saveTodoList()
 }
 
 function createTaskDiv(task) {
@@ -117,3 +120,4 @@ function createDeleteButton() {
   deleteButton.classList.add("delete-button");
   return deleteButton;
 }
+
