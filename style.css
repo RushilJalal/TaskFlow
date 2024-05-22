@@ -4,8 +4,9 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #d87ed5;
+  background-color: #f3f4f6; /* Light background color */
   font-size: 20px;
+  color: #333; /* Darker text color for better readability */
 }
 
 .entire {
@@ -15,9 +16,8 @@ body {
 }
 
 .header {
-  color: rgb(255, 255, 255);
-  text-align: center;
-  background-color: rgb(96, 93, 93);
+  background-color: #283593; /* Deep blue background for header */
+  color: white;
   font-size: 2em;
   font-weight: bold;
   grid-row: 1/2;
@@ -27,74 +27,121 @@ body {
   justify-content: center;
   gap: 20px;
   height: auto;
+  padding: 20px; /* Added padding for better spacing */
+}
+
+.header-pic {
+  height: 50px; /* Adjusted size for better alignment */
 }
 
 .sidebar {
-  background-color: rgb(68, 68, 68);
+  background-color: #3949ab; /* Dark blue background for sidebar */
   color: white;
   display: flex;
   flex-direction: column;
-  width: auto;
   padding: 20px;
   grid-row: 2/3;
   grid-column: 1/2;
   gap: 20px;
+  transition: background-color 0.3s;
+}
+
+.sidebar-heading {
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .project-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
 }
 
-/* .project-list button {
-  display: flex;
-  flex-direction: column;
+.project-item-button {
   background-color: transparent;
-  border: 0;
-  color: black;
+  border: none;
+  color: white;
   font-size: large;
-  gap: 10px;
-} */
-
-.project-list button:hover {
-  background-color: #1b98be;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: left; /* Align text to the left for better readability */
 }
 
-.project-list button:active {
-  background-color: black;
+.project-item-button:hover {
+  background-color: #5c6bc0; /* Lighter shade on hover */
+  transform: scale(1.05);
+}
+
+.project-item-button:active,
+.project-item-button.selected {
+  background-color: #1b98be;
+  transform: scale(1.05);
+}
+
+.add-project-button {
+  background-color: #1b98be;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-project-button:hover {
+  background-color: #1565c0;
+  transform: rotate(90deg);
+}
+
+.content {
+  padding: 20px;
 }
 
 .task-list {
   list-style-type: none;
-  padding: 20px;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  gap: 10px;
 }
 
 .task-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px;
+  padding: 15px;
   border-radius: 10px;
   margin-bottom: 10px;
-  color: black;
-  height: 30px;
-  border: 2px solid black;
+  color: #333;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.task-item:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
 }
 
 .add-task-button {
-  background-color: rgb(205, 197, 197);
-  margin: 50px 0 0 50px;
-  padding: 10px;
+  background-color: #1b98be;
+  margin: 20px 0;
+  padding: 10px 20px;
   border-radius: 5px;
   font-size: 18px;
   font-weight: 500;
-  border: 2px solid black;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.add-task-button:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
 }
 
 .input-div {
@@ -102,77 +149,53 @@ body {
   justify-content: space-between;
   gap: 30px;
   margin-top: 20px;
-  height: auto;
 }
 
-li {
-  list-style-type: none;
-}
-
-.add-project-button {
-  background-color: rgb(190, 190, 190);
+.add-task-dialog,
+.edit-task-dialog {
+  border: none;
   border-radius: 10px;
-  padding: 5px;
-  color: black;
-  font-weight: bold;
-  height: 50px;
-  width: 50px;
-  cursor: pointer;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.heading-div {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.sidebar-heading {
-  color: white;
-  font-size: large;
-  font-weight: bold;
-  padding: 10px;
-}
-
-dialog {
-  display: none;
-}
-
-.add-task-dialog {
-  border: 0;
-}
-
-::backdrop {
-  background-color: black;
-  opacity: 0.6;
+.dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .form-buttons button {
-  background-color: rgb(205, 197, 197);
-  margin: 10px;
+  background-color: #1b98be;
+  color: white;
   padding: 10px;
+  border: none;
   border-radius: 5px;
   font-size: 18px;
   font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .form-buttons button:hover {
-  background-color: rgb(140, 136, 136);
-}
-
-.form-buttons button:active {
-  background-color: rgb(70, 67, 67);
+  background-color: #1565c0;
+  transform: scale(1.05);
 }
 
 .task-done {
   text-decoration: line-through;
+  color: #999; /* Grey color for completed tasks */
 }
 
 .checkbox {
@@ -183,6 +206,7 @@ form {
   border: 1px solid #cccccc;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .checkbox:checked {
@@ -194,24 +218,33 @@ button {
 }
 
 button:hover {
-  background-color: rgb(140, 136, 136);
+  background-color: #8c8888;
+  transform: scale(1.05);
 }
 
 button:active {
-  background-color: rgb(70, 67, 67);
+  background-color: #464343;
 }
 
 .edit-button,
 .delete-button,
 .desc-button {
   border-radius: 10px;
-  background-color: rgb(205, 197, 197);
+  background-color: #cdc5c5;
   margin: 5px;
   padding: 5px;
-  border-radius: 10px;
   font-size: 18px;
   font-weight: 500;
   border: 2px solid black;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.edit-button:hover,
+.delete-button:hover,
+.desc-button:hover {
+  background-color: #8c8888;
+  transform: scale(1.05);
 }
 
 .details-dialog {
@@ -226,14 +259,15 @@ button:active {
   border-radius: 5px;
   font-size: 18px;
   font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.project-list button {
-  display: flex;
-  flex-direction: column;
-  background-color: transparent;
-  border: 0;
-  color: white;
-  font-size: large;
-  gap: 10px;
+.details-dialog button:hover {
+  background-color: #8c8888;
+  transform: scale(1.05);
+}
+
+::backdrop{
+  opacity: 0.6;
 }
