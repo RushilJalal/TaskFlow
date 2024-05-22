@@ -3,7 +3,7 @@ export function generateTodoObj(title, description, dueDate, priority) {
     title,
     description,
     dueDate,
-    priority,
+    priority
   };
 }
 
@@ -13,16 +13,27 @@ export const todoList = [
     tasks: [
       {
         title: "Buy bread",
-        description: "buy 10 bread",
+        description: "Buy 10 loaves of bread",
         dueDate: "2024-03-01",
         priority: "Low",
       },
-
       {
         title: "Study notes",
-        description: "CNP notes",
+        description: "Review Computer Networks and Protocols (CNP) notes",
         dueDate: "2024-03-02",
         priority: "High",
+      },
+      {
+        title: "Design UI Mockups",
+        description: "Create wireframes and visual designs for Project X",
+        dueDate: "2024-03-03",
+        priority: "High",
+      },
+      {
+        title: "Set Up Database",
+        description: "Create tables and define relationships in the database",
+        dueDate: "2024-03-04",
+        priority: "Medium",
       }
     ]
   },
@@ -30,19 +41,20 @@ export const todoList = [
   {
     projectName: "My Day",
     tasks: [
+
       {
-        title: "hello",
-        description: "buy 10 bread",
+        title: "Buy bread",
+        description: "Buy 10 loaves of bread",
         dueDate: "2024-03-01",
         priority: "Low",
       },
-
       {
         title: "Study notes",
-        description: "CNP notes",
+        description: "Review Computer Networks and Protocols (CNP) notes",
         dueDate: "2024-03-02",
         priority: "High",
-      }
+      },
+
     ]
   },
 
@@ -50,18 +62,18 @@ export const todoList = [
     projectName: "Personal",
     tasks: [
       {
-        title: "Buy bread",
-        description: "buy 10 bread",
-        dueDate: "2024-03-01",
-        priority: "Low",
-      },
-
-      {
-        title: "Study notes",
-        description: "CNP notes",
-        dueDate: "2024-03-02",
+        title: "Design UI Mockups",
+        description: "Create wireframes and visual designs for Project X",
+        dueDate: "2024-03-03",
         priority: "High",
+      },
+      {
+        title: "Set Up Database",
+        description: "Create tables and define relationships in the database",
+        dueDate: "2024-03-04",
+        priority: "Medium",
       }
+
     ]
   }
 ];

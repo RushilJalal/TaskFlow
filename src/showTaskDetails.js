@@ -18,7 +18,7 @@ export function showTaskDetails(projectIndex, index) {
   taskName.textContent = `Title: ${todoList[projectIndex].tasks[index].title}`;
   taskDesc.textContent = `Description: ${todoList[projectIndex].tasks[index].description}`;
 
-  if (todoList[index].description === "")
+  if (todoList[projectIndex].tasks.description === "")
     taskDesc.textContent = "Description: None";
 
   document.body.appendChild(taskDetailsDialog);
