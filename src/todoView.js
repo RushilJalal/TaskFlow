@@ -2,9 +2,25 @@ import { handleAddTask } from "./createNewTask";
 import { renderTodoList } from "./renderTodoList";
 import { renderSidebar } from "./renderSidebar";
 
+//default project index is 0
+let projectIndex = 0
+
 export function todoView() {
-  renderTodoList();
+
+  renderTodoList(projectIndex);
   renderSidebar();
+
+  // event listener on project list button
+  const projectList = document.querySelector(".project-list");
+  projectList.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+      projectIndex = todoList.findIndex(
+        (project) => project.projectName === event.target.textContent
+      );
+      renderTodoList(projectIndex);
+      console.log("new project index", projectIndex)
+    }
+  });
 
   const addTaskDialog = document.querySelector(".add-task-dialog");
 

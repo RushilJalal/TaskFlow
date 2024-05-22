@@ -4,32 +4,32 @@ import { setTaskPriorityColor } from "./setTaskPriority";
 import { toggleStrikeThrough } from "./todoView";
 import { showEditTaskDialog } from "./editTask";
 
-export function renderTodoList() {
+export function renderTodoList(projectIndex) {
   const content = document.querySelector(".content");
   const taskList = document.querySelector(".task-list");
 
   taskList.textContent = "";
 
-  todoList.forEach((todoItem, index) => {
-    const taskDiv = createTaskDiv(todoItem);
+  const project = todoList[projectIndex];
+  project.tasks.forEach((task, taskIndex) => {
+    const taskDiv = createTaskDiv(task);
     taskList.appendChild(taskDiv);
 
     const deleteButton = taskDiv.querySelector(".delete-button");
     deleteButton.addEventListener("click", () => {
-      todoList.splice(index, 1);
-      taskList.textContent = "";
-      renderTodoList();
+      project.tasks.splice(taskIndex, 1);
+      renderTodoList(projectIndex);
     });
 
     const detailsButton = taskDiv.querySelector(".desc-button");
     detailsButton.addEventListener("click", () => {
-      showTaskDetails(index);
+      showTaskDetails(projectIndex, taskIndex);
     });
 
     const editTaskButton = taskDiv.querySelector(".edit-button");
     editTaskButton.addEventListener("click", () => {
-      showEditTaskDialog(index)
-    })
+      showEditTaskDialog(projectIndex, taskIndex);
+    });
   });
 
   content.appendChild(taskList);
@@ -37,20 +37,20 @@ export function renderTodoList() {
   toggleStrikeThrough();
 }
 
-export function createTaskDiv(todoItem) {
+function createTaskDiv(task) {
   const taskDiv = document.createElement("div");
   taskDiv.classList.add("task-item");
 
   const checkbox = createCheckbox();
   taskDiv.appendChild(checkbox);
 
-  const taskName = createTaskName(todoItem.title);
+  const taskName = createTaskName(task.title);
   taskDiv.appendChild(taskName);
 
-  const date = createDate(todoItem.dueDate);
+  const date = createDate(task.dueDate);
   taskDiv.appendChild(date);
 
-  const priority = createPriority(todoItem.priority);
+  const priority = createPriority(task.priority);
   taskDiv.appendChild(priority);
 
   const desc = createDescButton();

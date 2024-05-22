@@ -14,7 +14,7 @@ export function setTaskPriorityColor() {
         task.style.backgroundColor = "orange";
         break;
       case "Low":
-        task.style.backgroundColor = "green";
+        task.style.backgroundColor = "#27ae60";
         break;
     }
   });

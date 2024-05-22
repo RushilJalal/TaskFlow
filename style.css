@@ -178,9 +178,15 @@ form {
 .checkbox {
   width: 20px;
   height: 20px;
-  background-color: #ffffff;
+  outline: none;
+  background-color: #f31e1e;
   border: 1px solid #cccccc;
-  border-radius: 3px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  background-color: #27ae60;
 }
 
 button {

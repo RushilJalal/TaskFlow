@@ -1,11 +1,11 @@
-let projects = ["All", "My Day", "Personal"];
+import { todoList } from "./todoModel";
 
 export function renderSidebar() {
   const projectList = document.querySelector(".project-list");
 
-  projects.forEach((project) => {
+  todoList.forEach((project) => {
     const projectItem = document.createElement("button");
-    projectItem.textContent = project;
+    projectItem.textContent = project.projectName;
     projectList.appendChild(projectItem);
   });
 }

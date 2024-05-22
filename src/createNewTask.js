@@ -4,7 +4,7 @@
 import { renderTodoList } from "./renderTodoList";
 import { generateTodoObj, todoList } from "./todoModel";
 
-export function handleAddTask() {
+export function handleAddTask(projectIndex) {
   const addTaskDialog = document.querySelector(".add-task-dialog");
   const nameInput = document.querySelector("#task-name");
   const descInput = document.querySelector("#task-desc");
@@ -21,7 +21,7 @@ export function handleAddTask() {
     return;
   }
 
-  createTodoItem(name, desc, date, priority);
+  createTodoItem(projectIndex, name, desc, date, priority);
 
   addTaskDialog.style.display = "none";
   addTaskDialog.close();
@@ -29,11 +29,11 @@ export function handleAddTask() {
   form.reset();
 }
 
-function createTodoItem(name, desc, date, priority) {
+function createTodoItem(projectIndex, name, desc, date, priority) {
   const newTask = generateTodoObj(name, desc, date, priority);
-  todoList.push(newTask);
+  todoList[projectIndex].tasks.push(newTask);
 
   const taskList = document.querySelector(".task-list");
   taskList.textContent = "";
-  renderTodoList();
+  renderTodoList(projectIndex);
 }

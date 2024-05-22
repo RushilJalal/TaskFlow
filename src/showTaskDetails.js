@@ -1,7 +1,7 @@
 import { todoList } from "./todoModel";
 
 //display task name and task description on clicking details button
-export function showTaskDetails(index) {
+export function showTaskDetails(projectIndex, index) {
   const taskDetailsDialog = document.createElement("dialog");
   taskDetailsDialog.classList.add("details-dialog");
 
@@ -15,8 +15,8 @@ export function showTaskDetails(index) {
   taskDetailsDialog.appendChild(taskDesc);
   taskDetailsDialog.appendChild(closeButton);
 
-  taskName.textContent = `Title: ${todoList[index].title}`;
-  taskDesc.textContent = `Description: ${todoList[index].description}`;
+  taskName.textContent = `Title: ${todoList[projectIndex].tasks[index].title}`;
+  taskDesc.textContent = `Description: ${todoList[projectIndex].tasks[index].description}`;
 
   if (todoList[index].description === "")
     taskDesc.textContent = "Description: None";
