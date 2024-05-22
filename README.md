@@ -32,8 +32,8 @@ Before you begin, ensure you have the following installed on your system:
 1. **Clone the Repository**
 
     ```sh
-    git clone https://github.com/yourusername/todolist-app.git
-    cd todolist-app
+    git clone https://github.com/yourusername/todo-list.git
+    cd todo-list
     ```
 
 2. **Install Dependencies**
@@ -101,16 +101,6 @@ function loadTodoList() {
 export let todoList = loadTodoList();
 ```
 
-
-- **public/**: Contains static assets like the favicon and `index.html`.
-- **src/**: Contains the main application code.
-  - **assets/**: Contains media assets.
-  - **css/**: Contains the CSS file for styling.
-  - **js/**: Contains JavaScript files for different modules of the application.
-- **.gitignore**: Specifies files to be ignored by Git.
-- **package.json**: Lists dependencies and scripts.
-- **README.md**: This file.
-- **vite.config.js**: Configuration file for Vite.
 
 ## Contributing
 
