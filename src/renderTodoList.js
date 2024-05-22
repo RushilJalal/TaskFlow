@@ -1,5 +1,5 @@
 import { showTaskDetails } from "./showTaskDetails";
-import { saveTodoList} from "./todoModel";
+import { saveTodoList } from "./todoModel";
 import { setTaskPriorityColor } from "./setTaskPriority";
 import { toggleStrikeThrough } from "./todoView";
 import { showEditTaskDialog } from "./editTask";
@@ -39,6 +39,12 @@ export function renderTodoList(projectIndex) {
     editTaskButton.addEventListener("click", () => {
       showEditTaskDialog(projectIndex, taskIndex);
     });
+
+    const checkbox = taskDiv.querySelector(".checkbox");
+    checkbox.addEventListener("click", () => {
+      task.completed = !task.completed;
+      saveTodoList();
+    });
   });
 
   content.appendChild(taskList);
@@ -51,7 +57,7 @@ function createTaskDiv(task) {
   const taskDiv = document.createElement("div");
   taskDiv.classList.add("task-item");
 
-  const checkbox = createCheckbox();
+  const checkbox = createCheckbox(task);
   taskDiv.appendChild(checkbox);
 
   const taskName = createTaskName(task.title);
@@ -75,10 +81,11 @@ function createTaskDiv(task) {
   return taskDiv;
 }
 
-function createCheckbox() {
+function createCheckbox(task) {
   const checkbox = document.createElement("input");
   checkbox.type = "checkbox";
   checkbox.classList.add("checkbox");
+  checkbox.checked = task.completed;
   return checkbox;
 }
 

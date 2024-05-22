@@ -30,7 +30,7 @@ export function handleAddTask(projectIndex) {
 }
 
 function createTodoItem(projectIndex, name, desc, date, priority) {
-  const newTask = generateTodoObj(name, desc, date, priority);
+  const newTask = generateTodoObj(name, desc, date, priority, false);
   todoList[projectIndex].tasks.push(newTask);
 
   const taskList = document.querySelector(".task-list");

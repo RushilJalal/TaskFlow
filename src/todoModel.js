@@ -16,24 +16,28 @@ export let todoList = [
         description: "Buy 10 loaves of bread",
         dueDate: "2024-03-01",
         priority: "Low",
+        completed: false
       },
       {
         title: "Study notes",
         description: "Review Computer Networks and Protocols (CNP) notes",
         dueDate: "2024-03-02",
         priority: "High",
+        completed: false
       },
       {
         title: "Design UI Mockups",
         description: "Create wireframes and visual designs for Project X",
         dueDate: "2024-03-03",
         priority: "High",
+        completed: false
       },
       {
         title: "Set Up Database",
         description: "Create tables and define relationships in the database",
         dueDate: "2024-03-04",
         priority: "Medium",
+        completed: false
       }
     ]
   },
@@ -41,18 +45,19 @@ export let todoList = [
   {
     projectName: "My Day",
     tasks: [
-
       {
         title: "Buy bread",
         description: "Buy 10 loaves of bread",
         dueDate: "2024-03-01",
         priority: "Low",
+        completed: false
       },
       {
         title: "Study notes",
         description: "Review Computer Networks and Protocols (CNP) notes",
         dueDate: "2024-03-02",
         priority: "High",
+        completed: false
       },
 
     ]
@@ -66,12 +71,14 @@ export let todoList = [
         description: "Create wireframes and visual designs for Project X",
         dueDate: "2024-03-03",
         priority: "High",
+        completed: false
       },
       {
         title: "Set Up Database",
         description: "Create tables and define relationships in the database",
         dueDate: "2024-03-04",
         priority: "Medium",
+        completed: false
       }
 
     ]
