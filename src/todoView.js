@@ -1,6 +1,7 @@
 import { handleAddTask } from "./createNewTask";
 import { renderTodoList } from "./renderTodoList";
 import { renderSidebar, showAddProjectDialog } from "./renderSidebar";
+import { saveTodoList } from "./todoModel";
 
 //default project index is 0
 let projectIndex = 0
@@ -34,6 +35,8 @@ export function todoView() {
 
     //reset form when close button clicked
     form.reset();
+
+    saveTodoList()
   });
 
   //when close button in edit task form is clicked, close the dialog

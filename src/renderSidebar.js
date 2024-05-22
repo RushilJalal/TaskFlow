@@ -49,9 +49,14 @@ export function showAddProjectDialog() {
   closeButton.textContent = "Close";
   closeButton.classList.add("close-add-project");
 
+  const buttonsDiv = document.createElement("div");
+  buttonsDiv.classList.add("project-dialog-buttons");
+
+  buttonsDiv.appendChild(closeButton);
+  buttonsDiv.appendChild(submitButton);
+
   addProjectDialog.appendChild(projectInput);
-  addProjectDialog.appendChild(submitButton);
-  addProjectDialog.appendChild(closeButton);
+  addProjectDialog.appendChild(buttonsDiv);
 
   document.body.appendChild(addProjectDialog);
   addProjectDialog.showModal();

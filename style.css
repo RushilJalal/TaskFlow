@@ -265,6 +265,7 @@ button:active {
   flex-direction: column;
   gap: 10px;
   justify-content: space-between;
+  width: 200px;
 }
 
 .details-dialog button {
@@ -340,4 +341,9 @@ button:active {
 .add-project-dialog button:hover {
   background-color: #1565c0;
   transform: scale(1.05);
+}
+
+.project-dialog-buttons {
+  display: flex;
+  gap: 20px;
 }
