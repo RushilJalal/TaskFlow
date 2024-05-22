@@ -11,6 +11,9 @@ A simple and efficient To-Do List application built using Vite. This application
 - Highlight and select different projects.
 - Persistence of tasks using `localStorage`.
 
+## Live Link
+https://rushil-todo-list.netlify.app/
+
 ## Demo
 
 ![To-Do List Demo](./public/project-demo.png)
