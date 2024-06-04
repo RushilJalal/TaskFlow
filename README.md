@@ -14,7 +14,7 @@ A simple and efficient To-Do List application built using Vite. This application
 ## Live Link
 https://rushil-todo-list.netlify.app/
 
-## Demo
+## Screenshots
 
 ![To-Do List Demo](./public/project-demo.png)
 
