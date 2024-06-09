@@ -4,9 +4,11 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f3f4f6; /* Light background color */
+  background-color: #f3f4f6;
+  /* Light background color */
   font-size: 20px;
-  color: #333; /* Darker text color for better readability */
+  color: #333;
+  /* Darker text color for better readability */
 }
 
 .entire {
@@ -16,7 +18,8 @@ body {
 }
 
 .header {
-  background-color: #283593; /* Deep blue background for header */
+  background-color: #283593;
+  /* Deep blue background for header */
   color: white;
   font-size: 2em;
   font-weight: bold;
@@ -27,15 +30,18 @@ body {
   justify-content: center;
   gap: 20px;
   height: auto;
-  padding: 20px; /* Added padding for better spacing */
+  padding: 20px;
+  /* Added padding for better spacing */
 }
 
 .header-pic {
-  height: 50px; /* Adjusted size for better alignment */
+  height: 50px;
+  /* Adjusted size for better alignment */
 }
 
 .sidebar {
-  background-color: #3949ab; /* Dark blue background for sidebar */
+  background-color: #3949ab;
+  /* Dark blue background for sidebar */
   color: white;
   display: flex;
   flex-direction: column;
@@ -123,7 +129,7 @@ body {
   margin-bottom: 10px;
   color: #333;
   background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px #00000042;
   transition: background-color 0.3s, transform 0.3s;
 }
 
